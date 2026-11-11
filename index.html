@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#9E2C1D">
+<title>Villarrica Empório - Ofertas Exclusivas</title>
+<meta name="description" content="Promoções exclusivas Villarrica Empório. Vinhos, espumantes e destilados com preços especiais. Peça pelo WhatsApp!">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --primary: #9E2C1D;
+    --primary-dark: #7a2216;
+    --secondary: #27ae60;
+    --secondary-dark: #1e8449;
+    --dark: #2a2a2a;
+    --gray: #666;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+    --gold: #c9a961;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-hover: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--light-gray);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--white);
+    padding: 16px 20px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--primary);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.header-logo {
+    height: 48px;
+    width: auto;
+}
+
+.header-badge {
+    background: var(--primary);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 48px 20px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    backdrop-filter: blur(4px);
+}
+
+.hero h1 {
+    font-size: clamp(28px, 6vw, 42px);
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+    display: inline-block;
+}
+
+.hero p {
+    font-size: clamp(15px, 4vw, 18px);
+    opacity: 0.95;
+    margin-bottom: 24px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--gold);
+    display: block;
+}
+
+.stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-header {
+    text-align: center;
+    padding: 40px 16px 24px;
+}
+
+.section-header h2 {
+    font-size: clamp(22px, 5vw, 30px);
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    color: var(--gray);
+    font-size: 15px;
+}
+
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 16px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== PRODUCT GRID ===== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 8px 0 48px;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(158,44,29,0.3);
+}
+
+.product-image-wrapper {
+    background: linear-gradient(135deg, #f8f8f8 0%, #eeeeee 100%);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-category {
+    font-size: 11px;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+}
+
+.product-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 14px;
+    line-height: 1.4;
+    min-height: 42px;
+}
+
+.product-pricing {
+    margin-bottom: 16px;
+}
+
+.product-old-price {
+    font-size: 13px;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 4px;
+}
+
+.product-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.product-price {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.product-discount {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.product-btn {
+    margin-top: auto;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-btn:hover,
+.product-btn:active {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.product-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* ===== BENEFITS ===== */
+.benefits {
+    background: var(--white);
+    padding: 40px 16px;
+}
+
+.benefits-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.benefit {
+    text-align: center;
+    padding: 16px;
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(158,44,29,0.1);
+    color: var(--primary);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.benefit h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--dark);
+}
+
+.benefit p {
+    font-size: 13px;
+    color: var(--gray);
+}
+
+/* ===== CTA BANNER ===== */
+.cta-banner {
+    background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+    color: var(--white);
+    padding: 48px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-banner h2 {
+    font-size: clamp(22px, 5vw, 28px);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.cta-banner p {
+    opacity: 0.9;
+    margin-bottom: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn-big {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 16px rgba(39,174,96,0.4);
+    transition: all 0.3s ease;
+}
+
+.cta-btn-big:hover,
+.cta-btn-big:active {
+    background: var(--secondary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39,174,96,0.5);
+}
+
+.cta-btn-big svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 40px 20px 24px;
+    text-align: center;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-info {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.footer-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 18px;
+}
+
+.social-link:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.footer-site-btn {
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 16px 0;
+    transition: all 0.2s;
+}
+
+.footer-site-btn:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #fff;
+}
+
+.footer-copy {
+    font-size: 12px;
+    color: #777;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== FLOATING WHATSAPP ===== */
+.floating-wpp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    z-index: 99;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: pulse-wpp 2s infinite;
+}
+
+@keyframes pulse-wpp {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.floating-wpp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37,211,102,0.6);
+}
+
+.floating-wpp svg {
+    width: 32px;
+    height: 32px;
+    fill: #fff;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .header { padding: 12px 16px; }
+    .header-logo { height: 40px; }
+    .hero { padding: 36px 16px 48px; }
+    .hero-stats { gap: 20px; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .product-image-wrapper { padding: 16px; }
+    .product-image { max-height: 160px; }
+    .product-info { padding: 14px; }
+    .product-name { font-size: 13px; min-height: 36px; }
+    .product-price { font-size: 20px; }
+    .product-btn { padding: 12px 10px; font-size: 12px; }
+    .floating-wpp { width: 56px; height: 56px; bottom: 16px; right: 16px; }
+}
+
+@media (max-width: 380px) {
+    .products-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-content">
+        <img src="https://www.villarricaemporio.com.br/tpl/img/logo.png" alt="Villarrica Empório" class="header-logo">
+        <span class="header-badge">Ofertas</span>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-tag">✨ Ofertas Exclusivas</span>
+        <h1>Sua adega merece <span>o melhor</span>, pelo melhor preço</h1>
+        <p>Selecionamos os melhores vinhos, espumantes e destilados com descontos imperdíveis. Peça pelo WhatsApp e receba no conforto da sua casa.</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">6+</span>
+                <span class="stat-label">Ofertas</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">23%</span>
+                <span class="stat-label">Desconto Máx.</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Seguro</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+    <div class="benefits-grid">
+        <div class="benefit">
+            <div class="benefit-icon">🍷</div>
+            <h3>Produto de Qualidade</h3>
+            <p>Com garantia e procedência</p>
+        </div>
+        <div class="benefit">
+            <div class="benefit-icon">🔒</div>
+            <h3>Compra Segura</h3>
+            <p>Transações 100% protegidas</p>
+        </div>
+        <div class="benefit">
+            <div class="benefit-icon">🚚</div>
+            <h3>Entrega Rápida</h3>
+            <p>Enviamos para todo Brasil</p>
+        </div>
+        <div class="benefit">
+            <div class="benefit-icon">💬</div>
+            <h3>Atendimento Direto</h3>
+            <p>Resposta rápida pelo WhatsApp</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION TITLE -->
+<div class="container">
+    <div class="section-header">
+        <h2>Promoções da Semana</h2>
+        <p>Aproveite antes que acabem</p>
+        <div class="section-divider"></div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="products-grid" id="productsGrid"></div>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <h2>Ainda com dúvidas?</h2>
+    <p>Fale com nossa equipe agora mesmo pelo WhatsApp e tire todas as suas dúvidas sobre nossos produtos e promoções.</p>
+    <a href="https://wa.me/5511947979768?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20ofertas%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="cta-btn-big" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar com Especialista
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <img src="https://www.villarricaemporio.com.br/tpl/img/logo.png" alt="Villarrica Empório" class="footer-logo">
+    <div class="footer-info">
+        <p><strong>Villarrica Empório</strong></p>
+        <p>📞 <a href="tel:+551123384766">(11) 2338-4766</a></p>
+        <p>📱 <a href="https://wa.me/5511947979768" target="_blank" rel="noopener">(11) 94797-9768</a></p>
+    </div>
+    <div class="footer-social">
+        <a href="https://www.instagram.com/villarricaemporio/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">📷</a>
+        <a href="https://wa.me/5511947979768" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">💬</a>
+        <a href="tel:+551123384766" class="social-link" aria-label="Telefone">📞</a>
+    </div>
+    <a href="https://www.villarricaemporio.com.br/" target="_blank" rel="noopener" class="footer-site-btn">🌐 Acessar Site Oficial</a>
+    <p class="footer-copy">© 2026 Villarrica Empório. Todos os direitos reservados.<br>Bebida alcoólica é proibido para menores de 18 anos.</p>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/5511947979768?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20ofertas%20e%20gostaria%20de%20fazer%20um%20pedido." class="floating-wpp" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Produtos reais do site Villarrica Empório
+const products = [
+    {
+        name: "Vinho Benjamin Cabernet Sauvignon 750ml",
+        category: "Vinho Tinto - Argentina",
+        oldPrice: 43.89,
+        price: 39.90,
+        discount: 9,
+        image: "https://www.villarricaemporio.com.br/uploads/1644068365.jpeg"
+    },
+    {
+        name: "Espumante Terranova Moscatel 750ml",
+        category: "Espumante - Brasil",
+        oldPrice: 49.90,
+        price: 39.90,
+        discount: 20,
+        image: "https://www.villarricaemporio.com.br/uploads/1649966359.jpeg"
+    },
+    {
+        name: "Vinho Trivento Reserva Branco Malbec 750ml",
+        category: "Vinho Branco - Argentina",
+        oldPrice: 89.90,
+        price: 79.90,
+        discount: 11,
+        image: "https://www.villarricaemporio.com.br/uploads/1698065265.png"
+    },
+    {
+        name: "Vodka Absolut Natural 750ml",
+        category: "Vodka - Suécia",
+        oldPrice: 129.90,
+        price: 99.90,
+        discount: 23,
+        image: "https://www.villarricaemporio.com.br/uploads/1707577904.png"
+    },
+    {
+        name: "Whisky White Horse 1000ml",
+        category: "Whisky - Escócia",
+        oldPrice: 137.90,
+        price: 114.90,
+        discount: 17,
+        image: "https://www.villarricaemporio.com.br/uploads/1689078332.png"
+    },
+    {
+        name: "Vinho Rutini Blend Cabernet/Malbec 750ml",
+        category: "Vinho Tinto - Argentina",
+        oldPrice: 209.90,
+        price: 189.90,
+        discount: 10,
+        image: "https://www.villarricaemporio.com.br/uploads/1726072637.png"
+    }
+];
+
+// Renderizar produtos
+const grid = document.getElementById('productsGrid');
+
+products.forEach(product => {
+    const msg = encodeURIComponent(`Olá! Tenho interesse na oferta: ${product.name} por R$ ${product.price.toFixed(2).replace('.', ',')} (promoção). Gostaria de fazer o pedido.`);
+    const wppLink = `https://wa.me/5511947979768?text=${msg}`;
+    
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+        <div class="product-badge">-${product.discount}%</div>
+        <div class="product-image-wrapper">
+            <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
+        </div>
+        <div class="product-info">
+            <span class="product-category">${product.category}</span>
+            <h3 class="product-name">${product.name}</h3>
+            <div class="product-pricing">
+                <div class="product-old-price">De R$ ${product.oldPrice.toFixed(2).replace('.', ',')}</div>
+                <div class="product-price-row">
+                    <span class="product-price">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
+                    <span class="product-discount">OFF</span>
+                </div>
+            </div>
+            <a href="${wppLink}" target="_blank" rel="noopener" class="product-btn">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Quero essa oferta
+            </a>
+        </div>
+    `;
+    grid.appendChild(card);
+});
+</script>
+
+</body>
+</html>
